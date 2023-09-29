@@ -1,11 +1,19 @@
 const express = require('express');
 const app = express();
+
+// Routes
 const formTemplateRoutes = require('./routes/formTemplateRoutes');
+const userRoutes = require('./routes/userRoutes');
+const userFormRoutes = require('./routes/userFormRoutes');
+const responseRoutes = require('./routes/responseRoutes');
 
-app.use(express.json()); // To parse JSON request bodies
+app.use(express.json()); // Middleware to parse JSON request bodies
 
-// Use the routes
+// Using the routes
 app.use(formTemplateRoutes);
+app.use(userRoutes);
+app.use(userFormRoutes);
+app.use(responseRoutes);
 
 // ... other app configurations ...
 
