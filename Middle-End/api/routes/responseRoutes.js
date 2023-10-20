@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Response = require('../database/models/responseModel');
+const Response = require('../../../Back-End/database/models/responseModel');
 
 // CREATE (e.g., Submit a form response)
 router.post('/response', async (req, res) => {
