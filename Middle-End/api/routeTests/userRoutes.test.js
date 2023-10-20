@@ -1,6 +1,6 @@
 const request = require('supertest');
 const mongoose = require('mongoose');
-const app = require('../../../server');
+const app = require('../../../Back-End/server');
 
 describe('User CRUD operations', () => {
     let userId; // to store user id for subsequent operations
