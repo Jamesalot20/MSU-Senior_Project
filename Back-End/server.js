@@ -17,8 +17,12 @@ app.use(responseRoutes);
 
 // ... other app configurations ...
 
+let server;
+
 if (process.env.NODE_ENV !== 'test') {
-    app.listen(3000, () => {
+    server = app.listen(3000, () => {
         console.log('Server is up on port 3000');
     });
 }
+
+module.exports = server; // exporting the server instance for supertest
