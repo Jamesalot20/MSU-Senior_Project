@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const FormTemplate = require('../database/models/formTemplateModel');
+const FormTemplate = require('../../../Back-End/database/models/formTemplateModel');
 
 // CREATE
 router.post('/form-template', async (req, res) => {
