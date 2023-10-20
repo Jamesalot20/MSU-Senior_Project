@@ -2,10 +2,10 @@ const User = require('./userModel');
 
 test('should be truthy for valid user', () => {
     const user = new User({
-        username: 'testUser',
-        email: 'test@email.com',
-        password: 'testPass123'
+        Name: 'testUser',
+        Email: 'test@email.com',
+        Password: 'testPass123'
     });
 
-    expect(user.username).toBe('testUser');
+    expect(user.Name).toBe('testUser');
 });
