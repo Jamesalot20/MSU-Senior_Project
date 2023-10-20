@@ -2,5 +2,14 @@
   "dependencies": {
     "mongodb": "^6.1.0",
     "mongoose": "^7.5.3"
+  },
+  "devDependencies": {
+    "jest": "^28.0.0"  // Version may differ based on the latest available when you install.
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
