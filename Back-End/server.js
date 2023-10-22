@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const connectDB = require('./database/db-config'); // Import the database function
 
 // Routes
 const formTemplateRoutes = require('../Middle-End/api/routes/formTemplateRoutes');
@@ -16,6 +17,8 @@ app.use(userFormRoutes);
 app.use(responseRoutes);
 
 // ... other app configurations ...
+console.log(connectDB);
+connectDB();
 
 if (process.env.NODE_ENV !== 'test') {
     app.listen(3000, () => {
