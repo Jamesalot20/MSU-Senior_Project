@@ -3,10 +3,11 @@ const app = express();
 const connectDB = require('./database/db-config'); // Import the database function
 
 // Routes
-const formTemplateRoutes = require('../Middle-End/api/routes/formTemplateRoutes');
-const userRoutes = require('../Middle-End/api/routes/userRoutes');
-const userFormRoutes = require('../Middle-End/api/routes/userFormRoutes');
-const responseRoutes = require('../Middle-End/api/routes/responseRoutes');
+const formTemplateRoutes = require('./routes/formTemplateRoutes');
+const userRoutes = require('./routes/userRoutes');
+const userFormRoutes = require('./routes/userFormRoutes');
+const responseRoutes = require('./routes/responseRoutes');
+
 
 app.use(express.json()); // Middleware to parse JSON request bodies
 
