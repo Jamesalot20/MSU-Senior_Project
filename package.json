@@ -21,7 +21,7 @@
     "tailwindcss": "latest"
   },
   "scripts": {
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "dev": "cd Front-End && next dev",
     "build": "cd Front-End && next build",
     "start": "cd Front-End && next start",
