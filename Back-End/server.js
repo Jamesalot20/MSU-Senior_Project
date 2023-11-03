@@ -4,10 +4,11 @@ const connectDB = require('./database/db-config'); // Import the database functi
 
 // Routes
 // Relative paths from the Back-End directory to the Middle-End directory
-const formTemplateRoutes = require('../../Middle-End/api/routes/formTemplateRoutes');
-const userRoutes = require('../../Middle-End/api/routes/userRoutes');
-const userFormRoutes = require('../../Middle-End/api/routes/userFormRoutes');
-const responseRoutes = require('../../Middle-End/api/routes/responseRoutes');
+const formTemplateRoutes = require('../Middle-End/api/routes/formTemplateRoutes');
+const userRoutes = require('../Middle-End/api/routes/userRoutes');
+const userFormRoutes = require('../Middle-End/api/routes/userFormRoutes');
+const responseRoutes = require('../Middle-End/api/routes/responseRoutes');
+
 
 
 
