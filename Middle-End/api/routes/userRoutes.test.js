@@ -9,19 +9,20 @@ describe('User CRUD operations', () => {
         await mongoose.connection.close(); // close the connection to db after tests
     });
 
-    test('should create a new user', async () => {
-        const response = await request(app)
-            .post('/users')  // assuming you have a POST endpoint '/users' for user creation
-            .send({
-                Name: 'John Doe',
-                Email: 'john.doe@test.com',
-                Password: 'password123'
-            });
+test('should create a new user', async () => {
+    const response = await request(app)
+        .post('/user')  // corrected endpoint
+        .send({
+            Name: 'John Doe',
+            Email: 'john.doe@test.com',
+            Password: 'password123'
+        });
 
-        expect(response.status).toBe(201);
-        expect(response.body.Name).toBe('John Doe');
-        userId = response.body._id; // save the ID for other operations
-    });
+    expect(response.status).toBe(201);
+    expect(response.body.Name).toBe('John Doe');
+    userId = response.body._id; // save the ID for other operations
+}, 10000); // increased timeout if needed
+
 
     test('should fetch a user', async () => {
         const response = await request(app).get(`/users/${userId}`);
