@@ -26,6 +26,7 @@
     "dev": "cd Front-End && next dev",
     "build": "cd Front-End && next build",
     "start": "cd Front-End && next start",
+    "start-back": "node Back-End/server.js",
     "lint": "cd Front-End && next lint"
   },
   "jest": {
