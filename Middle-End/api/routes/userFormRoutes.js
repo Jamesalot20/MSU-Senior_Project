@@ -3,7 +3,7 @@ const router = express.Router();
 const UserForm = require('../../../Back-End/database/models/userFormModel');
 
 // CREATE (e.g., Create a new form for a user)
-router.post('/user-form', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const userForm = new UserForm(req.body);
         await userForm.save();
@@ -14,7 +14,7 @@ router.post('/user-form', async (req, res) => {
 });
 
 // READ (all forms for all users) - Be cautious in production to not expose sensitive forms/data.
-router.get('/user-forms', async (req, res) => {
+router.get('/s', async (req, res) => {
     try {
         const userForms = await UserForm.find({});
         res.status(200).send(userForms);
@@ -24,7 +24,7 @@ router.get('/user-forms', async (req, res) => {
 });
 
 // READ (single form by ID)
-router.get('/user-form/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const userForm = await UserForm.findById(req.params.id);
         if (!userForm) {
@@ -37,7 +37,7 @@ router.get('/user-form/:id', async (req, res) => {
 });
 
 // UPDATE (e.g., Edit an existing form)
-router.patch('/user-form/:id', async (req, res) => {
+router.patch('/:id', async (req, res) => {
     try {
         const userForm = await UserForm.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
         if (!userForm) {
@@ -50,7 +50,7 @@ router.patch('/user-form/:id', async (req, res) => {
 });
 
 // DELETE (e.g., Delete a form)
-router.delete('/user-form/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
     try {
         const userForm = await UserForm.findByIdAndDelete(req.params.id);
         if (!userForm) {
