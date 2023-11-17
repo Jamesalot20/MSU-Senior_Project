@@ -1,4 +1,4 @@
-/*
+
 const request = require('supertest');
 const app = require('../../../Back-End/server'); // Adjust this path to the location of your Express app
 const mongoose = require('mongoose');
@@ -59,4 +59,4 @@ describe('Response CRUD operations', () => {
         expect(response.status).toBe(204); // 204 is typically returned for a successful DELETE request
     });
 });
-*/
+
