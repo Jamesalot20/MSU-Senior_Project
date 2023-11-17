@@ -1,4 +1,4 @@
-/*
+
 const request = require('supertest');
 const app = require('../../../Back-End/server'); // Update this path as necessary
 const mongoose = require('mongoose');
@@ -69,4 +69,4 @@ describe('FormTemplate CRUD operations', () => {
         expect(response.status).toBe(204);
     });
 });
-*/
+
