@@ -1,34 +1,33 @@
 const express = require('express');
+const cors = require('cors'); // Import CORS
 const app = express();
-const connectDB = require('./database/db-config'); // Import the database function
+const connectDB = require('./database/db-config');
 
 // Routes
-// Relative paths from the Back-End directory to the Middle-End directory
 const formTemplateRoutes = require('../Middle-End/api/routes/formTemplateRoutes');
 const userRoutes = require('../Middle-End/api/routes/userRoutes');
 const userFormRoutes = require('../Middle-End/api/routes/userFormRoutes');
 const responseRoutes = require('../Middle-End/api/routes/responseRoutes');
 
+app.use(cors()); // Use CORS middleware
+app.use(express.json());
 
+// Using the routes with '/api' prefix
+app.use('/api/form-templates', formTemplateRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/user-forms', userFormRoutes); // Adjusted the prefix here
+app.use('/api/responses', responseRoutes);
 
-
-app.use(express.json()); // Middleware to parse JSON request bodies
-
-// Using the routes
-app.use(formTemplateRoutes);
-app.use(userRoutes);
-app.use(userFormRoutes);
-app.use(responseRoutes);
-
-// ... other app configurations ...
-console.log(connectDB);
+// Database connection
+console.log('Database connection status:', connectDB);
 connectDB();
 
+// Start the server only if not in test environment
 if (process.env.NODE_ENV !== 'test') {
-    app.listen(3000, () => {
-        console.log('Server is up on port 3000');
+    const PORT = process.env.PORT || 3000; // Use PORT from environment or default to 3000
+    app.listen(PORT, () => {
+        console.log(`Server is up on port ${PORT}`);
     });
 }
 
-module.exports = app; // exporting the express app for supertest
-
+module.exports = app; // Exporting for testing
